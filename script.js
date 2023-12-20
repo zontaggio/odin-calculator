@@ -3,7 +3,9 @@
 let firstNumber = '';
 let secondNumber = '';
 let operatorType = '';
+let lastOperator = '';
 let operatorFlag = false;
+let operatorArray = [];
 let operatorTypes = ['add', 'subtract', 'multiply', 'divide'];
 let temporaryResult = ''
 
@@ -35,11 +37,12 @@ operatorTypes.forEach((type) => {
     const button = document.querySelector('#' + type);
     button.addEventListener('click', () => {
         operatorType = type;
+        operatorArray.push(operatorType);
         operatorFlag = true;
         if ((firstNumber != '') && secondNumber != '') {
-            temporaryResult = operate(firstNumber, operatorType, secondNumber);
+            temporaryResult = operate(firstNumber, operatorArray[operatorArray.length - 2], secondNumber);
             firstNumber = temporaryResult;
-            secondNumber = ''
+            secondNumber = '';
             return console.log(temporaryResult);
         }
     });
@@ -66,4 +69,4 @@ function operate(firstNumber, operatorType, secondNumber) {
         case 'divide':
             return divide(firstNumber, secondNumber);
     }
-}
+};
