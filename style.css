@@ -1,0 +1,75 @@
+body {
+    background-color: #FFECD6;
+}
+
+@font-face {
+    font-family: 'pixelatedFont';
+    src: url('./pixelatedFont.TTF') format('truetype');
+}
+
+.main-title, .main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    font-family: pixelatedFont;
+    font-size: 15px;
+    color: #0F2167;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.main-container {
+    flex-direction: column;
+}
+
+button[type="button"] {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border-color: #0F2167;
+    font-size: 22px;
+    background-color: #4CB9E7;
+    color: white;
+    margin: 2px;
+}
+
+#equal {
+    width: 140px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: 0;
+}
+
+#clear, #percentage, #signal, #divide, #multiply, #add, #subtract {
+    background-color: #0F2167;
+    color: white;
+    border-color: #0F2167;
+}
+
+#dot, #equal, #display {
+    background-color: #3559E0;
+    color: white;
+    border-color: #0F2167;
+}
+
+button:active {
+    transform: scale(0.8); 
+    transition: transform 0.15s; 
+}
+
+#display {
+    border-style: solid;
+    border-color: #0F2167;
+    font-size: 40px;
+    width: 245px;
+    padding: 20px 0px;
+    margin: 4px;
+    border-radius: 50px;
+    text-align: right;
+    padding-right: 50px;
+}
